@@ -23,12 +23,14 @@ if gemini_api_key:
 if "chat_history" not in st.session_state: 
 	st.session_state.chat_history = [] # Initialize with an empty list
 
+
+	
 # Display previous chat history using st.chat_message (if available) 
-	for role, message in st.session_state.chat_history: 
-	st.chat_message(role).markdown(message)
+for role, message in st.session_state.chat_history: 
+    st.chat_message(role).markdown(message)
 
 # Capture user input and generate bot response 
-	if user_input := st.chat_input("Type your message here..."): 
+if user_input := st.chat_input("Type your message here..."): 
 	# Store and display user message 
 	st.session_state.chat_history.append(("user", user_input)) 
 	st.chat_message("user").markdown(user_input) 
