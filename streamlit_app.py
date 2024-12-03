@@ -20,8 +20,8 @@ if gemini_api_key:
 		st.error(f"An error occurred while setting up the Gemini model: {e}") 
 
 # Initialize session state for storing chat history 
-	if "chat_history" not in st.session_state:
-	st.session_state.chat_history = [] # Initialize with an empty list 
+if "chat_history" not in st.session_state: 
+	st.session_state.chat_history = [] # Initialize with an empty list
 
 # Display previous chat history using st.chat_message (if available) 
 	for role, message in st.session_state.chat_history: 
